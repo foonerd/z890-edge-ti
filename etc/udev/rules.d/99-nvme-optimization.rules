@@ -1,0 +1,32 @@
+# Set the I/O scheduler to mq-deadline for all NVMe devices
+#ACTION=="add|change", KERNEL=="nvme[0-9]n[0-9]", ATTR{queue/scheduler}="none"
+ACTION=="add|change", KERNEL=="nvme[0-9]n[0-9]", ATTR{queue/scheduler}="mq-deadline"
+
+# Apply Active State Power Management (ASPM) to all NVMe devices dynamically
+# For all NVMe devices, enabling ASPM by setting CAP_EXP+10.b to 43
+# Apply the setpci command to all NVMe devices based on their PCI address
+#ACTION=="add", SUBSYSTEM=="pci", DRIVERS=="nvme", RUN+="/bin/sh -c '/usr/bin/setpci -s $attr{address} CAP_EXP+10.b=43'"
+#ACTION=="add", SUBSYSTEM=="pci", DRIVERS=="nvme", RUN+="/bin/sh -c 'sleep 2; /usr/bin/setpci -s $env{PCI_SLOT_NAME} CAP_EXP+10.b=43'"
+#ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0xc0a9", ATTR{device}=="0x5419", RUN+="/usr/bin/setpci -s 0000:01:00.0 CAP_EXP+10.b=43"
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x144d", ATTR{device}=="0xa80c", RUN+="/usr/bin/setpci -s 0000:02:00.0 CAP_EXP+10.b=43"
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x144d", ATTR{device}=="0xa80c", RUN+="/usr/bin/setpci -s 0000:81:00.0 CAP_EXP+10.b=43"
+
+
+# Volatile write cache
+ACTION=="add", KERNEL=="nvme1n1", RUN+="/usr/bin/nvme set-feature -f 0x06 -V 2 /dev/nvme1"
+ACTION=="add", KERNEL=="nvme2n1", RUN+="/usr/bin/nvme set-feature -f 0x06 -V 2 /dev/nvme2"
+
+# Set read-ahead for all NVMe devices
+KERNEL=="nvme*", SUBSYSTEM=="block", ATTR{queue/read_ahead_kb}="2097152"
+
+# Set nr_requests (queue depth) for all NVMe devices
+KERNEL=="nvme*", SUBSYSTEM=="block", ATTR{queue/nr_requests}="2048"
+
+# Enable writeback cache for all NVMe devices
+KERNEL=="nvme*", SUBSYSTEM=="block", ATTR{queue/write_cache}="writeback"
+
+# Set read-ahead cache size for all MD devices
+KERNEL=="md*", SUBSYSTEM=="block", ATTR{queue/read_ahead_kb}="2097152"
+
+# Set write cache to writeback for all MD devices
+KERNEL=="md*", SUBSYSTEM=="block", ATTR{queue/write_cache}="writeback"
