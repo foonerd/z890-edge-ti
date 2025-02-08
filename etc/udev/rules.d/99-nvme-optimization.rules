@@ -7,7 +7,7 @@ ACTION=="add|change", KERNEL=="nvme[0-9]n[0-9]", ATTR{queue/scheduler}="mq-deadl
 # Apply the setpci command to all NVMe devices based on their PCI address
 #ACTION=="add", SUBSYSTEM=="pci", DRIVERS=="nvme", RUN+="/bin/sh -c '/usr/bin/setpci -s $attr{address} CAP_EXP+10.b=43'"
 #ACTION=="add", SUBSYSTEM=="pci", DRIVERS=="nvme", RUN+="/bin/sh -c 'sleep 2; /usr/bin/setpci -s $env{PCI_SLOT_NAME} CAP_EXP+10.b=43'"
-#ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0xc0a9", ATTR{device}=="0x5419", RUN+="/usr/bin/setpci -s 0000:01:00.0 CAP_EXP+10.b=43"
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0xc0a9", ATTR{device}=="0x5419", RUN+="/usr/bin/setpci -s 0000:01:00.0 CAP_EXP+10.b=43"
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x144d", ATTR{device}=="0xa80c", RUN+="/usr/bin/setpci -s 0000:02:00.0 CAP_EXP+10.b=43"
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x144d", ATTR{device}=="0xa80c", RUN+="/usr/bin/setpci -s 0000:81:00.0 CAP_EXP+10.b=43"
 
