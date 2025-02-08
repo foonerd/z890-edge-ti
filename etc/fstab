@@ -6,9 +6,10 @@
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 # / was on /dev/nvme0n1p2 during curtin installation
-/dev/disk/by-uuid/c4e536ff-b117-4cbe-84d3-21a53a207694 / ext4 defaults 0 1
+/dev/disk/by-uuid/31549ab9-a5ff-4d03-a679-7502fd6bb3ab / ext4 defaults 0 1
 # /boot/efi was on /dev/nvme0n1p1 during curtin installation
-/dev/disk/by-uuid/20F1-015C /boot/efi vfat defaults 0 1
+/dev/disk/by-uuid/33C2-5238 /boot/efi vfat defaults 0 1
 /swap.img	none	swap	sw	0	0
 # /dev/md0 may fluctuate with upgrades
-/dev/disk/by-uuid/296ea1c4-001d-4568-9545-41348dd5b4b7 /volume1 ext4 defaults,noatime,nodiratime,discard 0 2
+# /dev/disk/by-uuid/296ea1c4-001d-4568-9545-41348dd5b4b7 /volume1 ext4 defaults,noatime,nodiratime,discard 0 2
+/dev/disk/by-uuid/296ea1c4-001d-4568-9545-41348dd5b4b7 /volume1 ext4    defaults,x-gvfs-show,nofail,discard   0   0
