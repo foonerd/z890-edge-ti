@@ -47,7 +47,7 @@ sudo apt install dkms build-essential linux-headers-$(uname -r)
 
 ## Downloadable .deb Files
 
-Precompiled `.deb` files for both modules are available for download in the [Releases](https://github.com/foonerd/z890-edge-ti/hardware/releases) directory.
+Precompiled `.deb` files for both modules are available for download in the [Releases](https://github.com/foonerd/z890-edge-ti/tree/main/hardware/releases)  directory.
 
 - **rtl8126 DKMS package**: [Download here](https://github.com/foonerd/z890-edge-ti/raw/refs/heads/main/hardware/releases/realtek-r8126-dkms_10.014.01-1_amd64.deb)
 - **nct6687d Sensor package**: [Download here](https://github.com/foonerd/z890-edge-ti/raw/refs/heads/main/hardware/releases/nct6687d-dkms_20241105-084624_all.deb)
