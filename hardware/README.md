@@ -1,4 +1,4 @@
-# MSI Z890 System - rtl8126 and nct6687d Modules
+# MSI MPG Z890I EDGE TI WIFI - rtl8126 and nct6687d Modules
 
 This repository contains the necessary information to build and install the `rtl8126` network driver and `nct6687d` sensor driver modules for the MSI Z890 system.
 
@@ -49,5 +49,5 @@ sudo apt install dkms build-essential linux-headers-$(uname -r)
 
 Precompiled `.deb` files for both modules are available for download in the [Releases](https://github.com/foonerd/z890/hardware/releases) directory.
 
-- **rtl8126 DKMS package**: [Download here]
-- **nct6687d Sensor package**: [Download here]
+- **rtl8126 DKMS package**: [Download here](https://github.com/foonerd/z890/raw/refs/heads/main/hardware/releases/realtek-r8126-dkms_10.014.01-1_amd64.deb)
+- **nct6687d Sensor package**: [Download here](https://github.com/foonerd/z890/raw/refs/heads/main/hardware/releases/nct6687d-dkms_20241105-084624_all.deb)

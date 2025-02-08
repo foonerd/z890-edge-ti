@@ -6,7 +6,7 @@ This repository contains configuration and tuning scripts for optimizing RAID1 p
 
 The repository is designed to work with the following hardware configuration:
 
-- **Motherboard**: MSI Z890I
+- **Motherboard**: MSI MPG Z890I EDGE TI WIFI
 - **CPU**: Intel i9 Ultra 285K (24 cores)
 - **RAM**: 96GB DDR5-6600
 - **Storage Configuration**:
