@@ -1,6 +1,6 @@
 # MSI MPG Z890I EDGE TI WIFI - rtl8126 and nct6687d Modules
 
-This repository contains the necessary information to build and install the `rtl8126` network driver and `nct6687d` sensor driver modules for the MSI Z890 system.
+This repository contains the necessary information to build and install the `rtl8126` network driver and `nct6687d` sensor driver modules for the MSI Z890 based motherboards.
 
 ## Modules Overview
 
