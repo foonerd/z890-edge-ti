@@ -35,7 +35,7 @@ Ensure that the necessary tools for configuring and optimizing NVMe drives and R
 
 ```bash
 sudo apt update
-sudo apt install nvme-cli hddtemp smartmontools sysstat
+sudo apt install nvme-cli smartmontools sysstat
 ```
 
 ### 2. Apply RAID1 and NVMe Optimizations
